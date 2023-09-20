@@ -5,6 +5,8 @@ import {
   selectCartTotal,
 } from '../../store/cart/cart.selector';
 
+import PaymentForm from '../../components/payment-form/payment-form.component';
+
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 
 import {
@@ -31,7 +33,7 @@ const Checkout = () => {
           <span>Quantity</span>
         </HeaderBlock>
         <HeaderBlock>
-          <span>Price</span>
+          <span>Price</span>  
         </HeaderBlock>
         <HeaderBlock>
           <span>Remove</span>
@@ -41,6 +43,7 @@ const Checkout = () => {
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
       <Total>Total: ${cartTotal}</Total>
+      <PaymentForm/>
     </CheckoutContainer>
   );
 };
